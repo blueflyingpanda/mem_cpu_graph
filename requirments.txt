@@ -1,5 +1,2 @@
 requests
-io
-os
-json
 matplotlib

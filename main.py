@@ -153,13 +153,14 @@ def main():
         mem = []
 
         compress_data_wrapper(dh.cpu, dh.time, cpu, time_cpu)
-        compress_data_wrapper(dh.mem, dh.time, mem, time_mem)
 
         plt.xlabel('time')
         plt.ylabel('cpu')
         plt.title('cpu usage rdp')
         plt.plot(time_cpu, cpu)
         plt.show()
+
+        compress_data_wrapper(dh.mem, dh.time, mem, time_mem)
 
         plt.xlabel('time')
         plt.ylabel('mem')
