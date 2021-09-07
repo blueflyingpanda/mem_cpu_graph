@@ -74,7 +74,8 @@ def perpendicular_distance(x1, y1, x2, y2, x3, y3):  # x3,y3 координат�
 
 def compress_data_wrapper(original_value, original_time, compressed_value, compressed_time, scale=2):
     begin = 0
-    # чем больше step тем точнее алгоритм, но тем дольше по времени он исполняется
+    # чем больше step тем точнее алгоритм, но тем дольше по времени он исполняется.
+    # scale должен быть не больше 0.1 step и не меньше 1
     step = 100
     end = step
     while begin < len(original_value):
@@ -101,7 +102,7 @@ def find_insert_pos(array, val):
 
 
 def compress_data(original_value, original_time, compressed_value, compressed_time, scale=2):
-    limit = len(original_value) - len(original_value) // scale
+    limit = int(len(original_value) - len(original_value) * (1 - (1 / scale)))
     compressed_value.append(original_value[0])
     compressed_time.append(original_time[0])
     compressed_value.append(original_value[len(original_value) - 1])
